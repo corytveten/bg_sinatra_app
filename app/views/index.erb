@@ -1,4 +1,10 @@
 <h2>Welcome to the Board Game Database</h2>
 
-<p><a href='/login'>Log In</a></p>
-<p><a href='/signup'>Sign Up</a></p>
+<% if logged_in? %>
+  Hi, <%= current_user.username %>
+  </br>
+  <!--- links --->
+<% else %>
+  <p><a href='/login'>Log In</a></p>
+  <p><a href='/signup'>Sign Up</a></p>
+<% end %>
