@@ -6,7 +6,7 @@ class GamesController < ApplicationController
       @games = Game.all
       erb :'games/games'
     else
-      redirect '/'
+      redirect '/login'
     end
   end
 
