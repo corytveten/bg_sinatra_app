@@ -2,7 +2,7 @@
 
 <% @games.each do |game| %>
 <ul>
-  <li><%= game.name %>
+  <li><a href='games/<%=game.id%>'><%= game.name %></a>
   (<%= game.year %>)
   <%= game.designer %></li>
 </ul>
