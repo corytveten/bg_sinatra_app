@@ -3,9 +3,8 @@
 <% if logged_in? %>
   <h3>Hi, <%= current_user.username %></h3>
   <!--- links --->
-  <a href='/users/show'>Your Games</a></br>
-  <a href='/games'>All Games</a></br>
-  <a href='/edit'>Add a Game</a></br>
+  <a href='/games'>Game Collection</a></br>
+  <a href='/games/new'>Add a Game</a></br>
   <a href='/logout'>Log Out</a>
 <% else %>
   <p><a href='/login'>Log In</a></p>
