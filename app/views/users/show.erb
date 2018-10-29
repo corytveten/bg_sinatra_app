@@ -2,5 +2,9 @@
 
 <h2>Games</h2>
 <% @user.games.each do |game| %>
-<%= game.name %>
-<% end %>
+<ul>
+  <li><%= game.name %></li>
+</ul>
+  <% end %>
+
+<a href='/'>Home</a></br>
