@@ -1,0 +1,10 @@
+<h2> Edit Your Game Entry </h2>
+
+<%= @game.name %>
+
+<h3>Edit</h3>
+<form action='/games/<%=@game.id%>' method='POST'>
+  <input type='hidden' id='hidden' name='_method' value='patch'>
+  <input type="text" name="game[name]" id="name" value="<%= @game.name %>">
+  <input type='submit' value='submit'>
+</form>
