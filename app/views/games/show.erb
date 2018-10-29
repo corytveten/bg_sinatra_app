@@ -3,4 +3,8 @@
 <p>Designer: <%= @game.designer %></p>
 
 <p><a href="/games/<%=@game.id%>/edit">Edit Game</a></p>
+<form action='/games/<%=@game.id%>' method='post'>
+  <input type='hidden' id='hidden' name='_method' value='delete'>
+  <input type='submit' value='delete game'>
+</form>
 <a href='/'>Home</a>
