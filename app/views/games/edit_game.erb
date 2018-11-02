@@ -5,6 +5,11 @@
 <h3>Edit</h3>
 <form action='/games/<%=@game.id%>' method='post'>
   <input type='hidden' id='hidden' name='_method' value='PATCH'>
-  <input type="text" name="name" id="name" value="<%= @game.name %>">
+  <label>Name</label>
+  <input type="text" name="name" id="name" value="<%= @game.name %>"></br>
+  <label>Year</label>
+  <input type="text" name="year" id="year" value="<%= @game.year %>"></br>
+  <label>Designer</label>
+  <input type="text" name="designer" id="designer" value="<%= @game.designer %>"></br>
   <input type='submit' value='submit'>
 </form>

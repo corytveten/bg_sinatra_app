@@ -55,6 +55,8 @@ class GamesController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     if logged_in? && @user.games.include?(@game) && !params["name"].empty?
       @game.update(name: params["name"])
+      @game.update(year: params["year"])
+      @game.update(designer: params["designer"])
       @game.save
       redirect to "/games/#{@game.id}"
     else
