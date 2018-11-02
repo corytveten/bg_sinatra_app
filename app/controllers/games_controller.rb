@@ -51,10 +51,10 @@ class GamesController < ApplicationController
   end
 
   patch '/games/:id' do
-    @game = Game.find_by(params[:id])
+    @game = Game.find_by_id(params[:id])
     @user = User.find_by(id: session[:user_id])
-    if logged_in? && @user.games.include?(@game) && !params["game"]["name"].empty?
-      @game.update(name: params["game"]["name"])
+    if logged_in? && @user.games.include?(@game) && !params["name"].empty?
+      @game.update(name: params["name"])
       @game.save
       redirect to "/games/#{@game.id}"
     else
