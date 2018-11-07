@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if logged_in?
-      redirect to '/games'
-    elsif params[:username] == '' || params[:password] == ''
+    if params[:username] == '' || params[:password] == ''
+      redirect to '/signup'
+    elsif User.find_by(:username => params[:username]) != nil
       redirect to '/signup'
     else
       @user = User.create(username: params[:username], password: params[:password])
